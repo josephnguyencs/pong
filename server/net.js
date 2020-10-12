@@ -5,10 +5,14 @@ class Net {
     this.position = position
     this.width = 80
     this.height = 24
+    this.markedForDeletion = false
   }
 
   update() {
-
+    if (DetectCollision(this.game.ball, this)) { // eslint-disable-line
+      this.game.ball.speed.y = -this.game.ball.speed.y
+      this.markedForDeletion = true
+    }
   }
 
   draw(ctx) {

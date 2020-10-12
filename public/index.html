@@ -11,12 +11,16 @@
     img {
       display: none;
     }
+    #img-ball {
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
   <img id="img-ball" alt="tennis-ball" src="images/tennis-ball.jpeg"/>
   <img id="img-net" alt="tennis-net" src="images/tennis-net.jpg"/>
   <canvas id="game-screen" width="800px" height="600px"></canvas>
+  <script src="../server/collision-detection.js"></script>
   <script src="../server/net.js"></script>
   <script src="../server/levels.js"></script>
   <script src="../server/ball.js"></script>
