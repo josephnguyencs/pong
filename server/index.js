@@ -4,6 +4,9 @@ let ctx = canvas.getContext('2d')
 const gameWidth = 800
 const gameHeight = 600
 
+let game = new Game(gameWidth, gameHeight) // eslint-disable-line
+game.start()
+
 ctx.clearRect(0, 0, 800, 600)
 let paddle = new Paddle(gameWidth, gameHeight) // eslint-disable-line
 let ball = new Ball(gameWidth, gameHeight) // eslint-disable-line
@@ -16,10 +19,8 @@ function gameLoop(timeStamp) {
   ctx.clearRect(0, 0, gameWidth, gameHeight)
   let dt = timeStamp - lastTime
   lastTime = timeStamp
-  paddle.update(dt)
-  paddle.draw(ctx)
-  ball.update(dt)
-  ball.draw(ctx)
+  game.update(dt)
+  game.draw(ctx)
   requestAnimationFrame(gameLoop)
 }
 
