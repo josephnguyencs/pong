@@ -30,7 +30,6 @@ class Paddle {
   }
 
   update(dt) {
-    if (!dt) return
     this.position.x += this.speed
     if (this.position.x < 0) this.position.x = 0
     if (this.position.x + this.width > this.gameWidth) {
