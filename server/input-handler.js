@@ -11,5 +11,16 @@ class InputHandler {
           break
       }
     })
+    document.addEventListener('keyup', (event) => {
+      switch (event.keyCode) {
+        case 37:
+          if (this.paddle.speed < 0) this.paddle.stop()
+          break
+        case 39:
+          if (this.paddle.speed > 0) this.paddle.stop()
+          break
+      }
+    })
   }
+
 }

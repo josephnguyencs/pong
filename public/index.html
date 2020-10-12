@@ -8,10 +8,15 @@
     #game-screen {
       border: 1px solid black;
     }
+    img {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <img id="img-ball" alt="tennis-ball" src="assets/images/tennis-ball.jpeg"/>
   <canvas id="game-screen" width="800px" height="600px"></canvas>
+  <script src="../server/ball.js"></script>
   <script src="../server/input-handler.js"></script>
   <script src="../server/paddle.js"></script>
   <script src="../server/index.js"></script>
