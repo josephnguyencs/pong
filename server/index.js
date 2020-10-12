@@ -5,7 +5,6 @@ const gameWidth = 800
 const gameHeight = 600
 
 let game = new Game(gameWidth, gameHeight) // eslint-disable-line
-game.start()
 
 ctx.clearRect(0, 0, 800, 600)
 let paddle = new Paddle(gameWidth, gameHeight) // eslint-disable-line
