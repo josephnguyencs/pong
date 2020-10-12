@@ -3,7 +3,7 @@ class Net {
     this.image = document.getElementById('img-net')
     this.game = game
     this.position = position
-    this.width = 52
+    this.width = 80
     this.height = 24
   }
 
