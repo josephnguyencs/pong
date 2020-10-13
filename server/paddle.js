@@ -4,7 +4,7 @@ class Paddle {
     this.gameHeight = game.gameHeight
     this.width = 150
     this.height = 30
-    this.maxSpeed = 7
+    this.maxSpeed = 15
     this.speed = 0
     this.position = {
       x: game.gameWidth / 2 - this.width / 2,
