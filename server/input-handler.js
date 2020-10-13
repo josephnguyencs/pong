@@ -1,8 +1,14 @@
 class InputHandler {
   constructor(paddle, game) {
     this.paddle = paddle
+    this.game = game
+    this.keyDown = this.keyDown.bind(this)
+    this.keyUp = this.keyUp.bind(this)
+  }
+
+  keyDown() {
     document.addEventListener('keydown', (event) => {
-      switch(event.keyCode) {
+      switch (event.keyCode) {
         case 37:
           this.paddle.moveLeft()
           break
@@ -10,13 +16,16 @@ class InputHandler {
           this.paddle.moveRight()
           break
         case 27:
-          game.togglePause()
+          this.game.togglePause()
           break
         case 32:
-          game.start()
+          this.game.start()
           break
       }
     })
+  }
+
+  keyUp() {
     document.addEventListener('keyup', (event) => {
       switch (event.keyCode) {
         case 37:
@@ -28,5 +37,4 @@ class InputHandler {
       }
     })
   }
-
 }

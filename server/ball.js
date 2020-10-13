@@ -4,15 +4,19 @@ class Ball {
     this.gameHeight = game.gameHeight
     this.image = document.getElementById('img-ball')
     this.game = game
+    this.size = 16
+    this.reset()
+  }
+
+  reset() {
     this.position = {
       x: 10,
       y: 400
     }
     this.speed = {
-      x: 4,
-      y: -2
+      x: 10,
+      y: -10
     }
-    this.size = 16
   }
 
   draw(ctx) {
@@ -26,9 +30,14 @@ class Ball {
     if (this.position.x + this.size > this.gameWidth || this.position.x < 0) {
       this.speed.x = -this.speed.x
     }
-    //wall on top/bottom
-    if (this.position.y + this.size > this.gameHeight || this.position.y < 0) {
+    //wall on top
+    if (this.position.y < 0) {
       this.speed.y = -this.speed.y
+    }
+    // bottom of game
+    if (this.position.y + this.size > this.gameHeight) {
+      this.game.lives--
+      this.reset()
     }
     // check collision with paddle
     if (DetectCollision(this, this.game.paddle)) { // eslint-disable-line
